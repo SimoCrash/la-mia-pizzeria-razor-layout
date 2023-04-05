@@ -1,8 +1,41 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+
+    var nome = "Simone";
+    var cognome = "Crescenzi";
+
+    void stampaNum(int numN)
+    {
+        var somma = 0;
+        for (int i = 0; i <= numN; i++)
+        {
+            somma += i;
+        }
+        <span>@somma</span>
+    }
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div>
+
+    <h2>Buonasera, sono @nome @cognome</h2>
+    
+    <p>La somma tra 1 e 20 è @{stampaNum(20);}</p>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
+
