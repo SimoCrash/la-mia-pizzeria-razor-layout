@@ -1,0 +1,87 @@
+﻿@{
+      Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        * {
+            text-align: center;
+        }
+        .bor-tab {
+            border: 1px solid black;
+            margin: auto;
+        }
+
+        th, td {
+            border: 1px solid black;
+            height: 100px;
+            width: 200px;
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .image-buf {
+            background-image: url("/img/bufala.jpg");
+        }
+
+        .image-dia{
+            background-image: url("/img/diavola.jpg");
+        }
+
+        .image-ame {
+            background-image: url("/img/americana.jpg");
+        }
+
+        .image-buf, .image-dia, .image-ame {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        } 
+
+    </style>
+    <title>Le Nostre Pizze</title>
+    
+</head>
+<body>
+    <div>
+        <h1>Le nostre pizze</h1>
+        <h2>La top 3 di questa settimana</h2>
+    </div>
+    <div>
+        <table class="bor-tab">
+            <tr>
+                <th><h3>Nome</h3></th>
+                <th><h3>Descrizione</h3></th>
+                <th><h3>Foto</h3></th>
+                <th><h3>Prezzo</h3></th>
+            </tr>
+            <tr>
+                <td>1.Regina Margherita</td>
+                <td>Pizza margherita con mozzarella di Bufala</td>
+                <td class="image-buf"></td>
+                <td>12.00€</td>
+            </tr>
+            <tr>
+                <td>2.Pizza Diavola</td>
+                <td>Pizza margherita con salame piccante</td>
+                <td class="image-dia"></td>
+                <td>7.00€</td>
+            </tr>
+            <tr>
+                <td>3.Pizza Americana</td>
+                <td>Pizza margherita con wurstel e stick</td>
+                <td class="image-ame"></td>
+                <td>8.00€</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
