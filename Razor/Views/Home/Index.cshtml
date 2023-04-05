@@ -14,7 +14,7 @@
         <span>@somma</span>
     }
 
-    
+
     int trovaLettera()
     {
         int a = 0;
@@ -28,6 +28,30 @@
         }
         return a;
     }
+
+    List<int> NumRandom()
+    {
+        var random = new Random();
+        var numero = new List<int>();
+        for(int i = 0; i <= 20; i++)
+        {
+            numero.Add(random.Next(1, 90));
+
+        }
+        return numero;
+    }
+    void NumRandomRange(List<int> list)
+    {
+        <ul>
+            @foreach(var n in list)
+            {
+                @if(n > 20 && n < 70)
+                {
+                    <li>@n</li>
+                }
+            }
+        </ul>       
+    }
 }
 
 <div>
@@ -38,7 +62,9 @@
 
     <p>"nel mezzo del cammin di nostra vita" ha @trovaLettera() "a"</p>
 
-
+    <p>@{
+            NumRandomRange(NumRandom());
+        }</p>
 
 
 
