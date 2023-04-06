@@ -10,7 +10,7 @@
     @RenderSection("Styles", required: false)
 </head>
 <body>
-    @Html.Partial("_NavBarPartial")
+    @await Html.PartialAsync("_NavBarPartial")
     <main>@RenderBody()</main>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

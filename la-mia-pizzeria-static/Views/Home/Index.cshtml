@@ -91,7 +91,10 @@
             {
                 <tr>
                     <td>@post.Id</td>
-                    <td>@post.Nome</td>
+                    <td>
+                        <a href="@Url.Action("Index", "Post")">@post.Nome</a>
+                        <a href="@Url.Action("Privacy", "Home")">Privacy</a>    
+                    </td>
                     <td>@post.Descrizione</td>
                     <td><img src="@post.Foto" /></td>
                     <td>@post.Prezzo</td>
