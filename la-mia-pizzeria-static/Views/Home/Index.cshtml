@@ -1,17 +1,40 @@
 ﻿@{
-      Layout = null;
+    ViewData["Title"] = "index";
+
+    var posts = new Post[]
+    {
+        new Post(
+            id: 0,
+            nome: "Regina Margherita",
+            descrizione: "Pizza margherita con mozzarella di Bufala",
+            foto: "/img/bufala.jpg",
+            prezzo: "12.00€"
+        ),
+        new Post(
+            id: 1,
+            nome: "Pizza Diavola",
+            descrizione: "Pizza margherita con salame piccante",
+            foto: "/img/diavola.jpg",
+            prezzo: "7.00€"
+        ),
+        new Post(
+            id: 2,
+            nome: "Pizza Americana",
+            descrizione: "Pizza margherita con wurstel e stick",
+            foto: "/img/americana.jpg",
+            prezzo: "8.00€"
+        )
+    };
 }
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+@section Styles
+{
     <style>
 
         * {
             text-align: center;
         }
+
         .bor-tab {
             border: 1px solid black;
             margin: auto;
@@ -22,7 +45,7 @@
             height: 100px;
             width: 200px;
         }
-        
+
         img {
             width: 100%;
             height: 100%;
@@ -32,7 +55,7 @@
             background-image: url("/img/bufala.jpg");
         }
 
-        .image-dia{
+        .image-dia {
             background-image: url("/img/diavola.jpg");
         }
 
@@ -44,12 +67,12 @@
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-        } 
-
+        }
     </style>
-    <title>Le Nostre Pizze</title>
+}
+
     
-</head>
+
 <body>
     <div>
         <h1>Le nostre pizze</h1>
@@ -58,30 +81,22 @@
     <div>
         <table class="bor-tab">
             <tr>
+                <th><h3>Id</h3></th>
                 <th><h3>Nome</h3></th>
                 <th><h3>Descrizione</h3></th>
                 <th><h3>Foto</h3></th>
                 <th><h3>Prezzo</h3></th>
             </tr>
-            <tr>
-                <td>1.Regina Margherita</td>
-                <td>Pizza margherita con mozzarella di Bufala</td>
-                <td class="image-buf"></td>
-                <td>12.00€</td>
-            </tr>
-            <tr>
-                <td>2.Pizza Diavola</td>
-                <td>Pizza margherita con salame piccante</td>
-                <td class="image-dia"></td>
-                <td>7.00€</td>
-            </tr>
-            <tr>
-                <td>3.Pizza Americana</td>
-                <td>Pizza margherita con wurstel e stick</td>
-                <td class="image-ame"></td>
-                <td>8.00€</td>
-            </tr>
+            @foreach(var post in posts)
+            {
+                <tr>
+                    <td>@post.Id</td>
+                    <td>@post.Nome</td>
+                    <td>@post.Descrizione</td>
+                    <td><img src="@post.Foto" /></td>
+                    <td>@post.Prezzo</td>
+                </tr>
+            }
         </table>
     </div>
 </body>
-</html>
